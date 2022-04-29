@@ -1,0 +1,113 @@
+html {
+  background-image: linear-gradient(to right, #FED2CF, #fff, #B5D5D8); }
+
+body {
+  padding: 2vw 2vw; }
+
+nuxt-img {
+  display: block;
+  margin: 0 auto; }
+
+/* Container needed to position the button. Adjust the width as needed */
+.container {
+  position: relative;
+  width: 100%;
+  border: black; }
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  padding: 3vw 0 0 0;
+  -webkit-animation: fadein 2s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s;
+  /* Firefox < 16 */
+  -ms-animation: fadein 2s;
+  /* Internet Explorer */
+  -o-animation: fadein 2s;
+  /* Opera < 12.1 */
+  animation: fadein 2s; }
+
+.ontopbtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #B5D5D8;
+  color: black;
+  font-size: clamp(16px, 3vw, 22px);
+  font-style: italic;
+  text-decoration: underline;
+  font-family: "Times New Roman", Times, serif;
+  opacity: .5;
+  padding: 2vw 4vw;
+  border: none;
+  cursor: pointer;
+  border-radius: 1px; }
+
+.ontopbtn:hover {
+  background-color: #fff; }
+
+.m-fadeOut {
+  visibility: hidden;
+  /*  opacity: 0;
+  transition: visibility 0s linear 300ms, opacity 300ms; */ }
+
+.title {
+  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  display: block;
+  font-weight: 300;
+  font-size: 100px;
+  color: #35495e;
+  letter-spacing: 1px; }
+
+.infolink {
+  padding: 3vw 0 0 0;
+  text-align: right;
+  color: red;
+  font-size: clamp(16px, 3vw, 22px); }
+
+.subtitle {
+  margin: 0;
+  padding: 2vw 2vw;
+  color: black;
+  font-size: 13px;
+  text-align: center;
+  -webkit-animation: fadein 2s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s;
+  /* Firefox < 16 */
+  -ms-animation: fadein 2s;
+  /* Internet Explorer */
+  -o-animation: fadein 2s;
+  /* Opera < 12.1 */
+  animation: fadein 2s; }
+
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
