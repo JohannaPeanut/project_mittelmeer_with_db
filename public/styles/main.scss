@@ -5,6 +5,10 @@ body {
   padding: 2vw 2vw;
 }
 
+*{
+  text-decoration: none;
+}
+
 nuxt-img {
   display: block;
   margin: 0 auto;
@@ -35,7 +39,6 @@ nuxt-img {
   color: black;
   font-size: clamp(16px, 3vw, 22px);
   font-style: italic;
-  text-decoration: underline;
   font-family: "Times New Roman", Times, serif;
   opacity: .5;
   padding: 2vw 4vw;
@@ -70,11 +73,42 @@ nuxt-img {
 }
 
 .infolink {
+  display: flex;
+  justify-content: space-between;
   padding: 3vw 0 0 0;
   text-align: right; 
   color: red;
   font-size: clamp(16px, 3vw, 22px);
 }
+
+#info-a{
+  text-decoration: underline;
+}
+
+#help-button {
+  background-color: transparent;
+  font-family: 'Times New Roman', Times, serif;
+  border: none;
+  font-size: 25px;
+  color: blue
+}
+
+a{
+  color: black
+}
+
+#help-div {
+  font-size: 13px;
+}
+
+.invisible{
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
 
 .subtitle {
   margin: 0;

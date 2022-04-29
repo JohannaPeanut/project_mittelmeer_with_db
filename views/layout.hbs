@@ -13,4 +13,19 @@
 <body>  
   {{{ body }}}
 </body>
+<script>
+  const helpDivElement = document.getElementById('help-div')
+  const helpButtonElement = document.getElementById('help-button')
+
+  helpButtonElement.addEventListener("click", () => {
+    if (helpDivElement.classList.contains('invisible')) {
+    helpDivElement.classList.add('visible')
+    helpDivElement.classList.remove('invisible')
+    } else {
+      helpDivElement.classList.remove('visible')
+      helpDivElement.classList.add('invisible')
+    }
+  })
+
+</script>
 </html>

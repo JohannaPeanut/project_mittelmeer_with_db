@@ -7,14 +7,21 @@
 <div class="container">
 
     <img src="{{ displayedLandscape.image }}" sizes="sm:100vw md:50vw lg:200px"/>
-    <div class="infolink">
-        <a href="http://start.johannamichel.com/remoteness-insularity-difficult-topography/">info</a>
-    </div>
 
     <div class="buttons">
       <button class="ontopbtn" id="btnDownload"> 
-        <a href="{{ displayedLandscape.image }}" download="my-unique-landscape.jpg">download</a>
+        <a href="{{ displayedLandscape.image }}" download="my-unique-landscape.jpg">download*</a>
       </button>
     </div>
 
 </div>
+<div class="infolink">
+  <button id="help-button">*</button>
+  <a id="info-a" href="http://start.johannamichel.com/remoteness-insularity-difficult-topography/">info</a>      
+</div>
+
+<div id="help-div" class="invisible">
+    The download should work perfectly with chrome / safari.
+    In case of problems with the browser of your mobile device: press on the image and store it manually.
+</div>
+
