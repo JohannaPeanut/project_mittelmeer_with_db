@@ -20,50 +20,51 @@ router.post('/landscape', (req, res, next) => {
   // simulate loading time with set time out for 1 sec
   setTimeout(function(){ 
     
-  // dev version: fetch an image from database and render view 
-  Landscape.findOne({ isUsed: false }, {}, { sort: { 'createdAt' : 1 } })
-   .then((displayedLandscape) => {
-     // render view with the fetched landscape from db
-     res.render('landscape', { displayedLandscape })
-   })
-   .catch(error => {
-     next(error)
-   })
+  // // dev version: fetch an image from database and render view 
+  // Landscape.findOne({ isUsed: false }, {}, { sort: { 'createdAt' : 1 } })
+  //  .then((displayedLandscape) => {
+  //    console.log(displayedLandscape.createdAt)
+  //    // render view with the fetched landscape from db
+  //    res.render('landscape', { displayedLandscape })
+  //  })
+  //  .catch(error => {
+  //    next(error)
+  //  })
   
-  //  // get random array using Pareto distribution
-  //   const randomArray = unirand.pareto(1,3).distributionSync(512)
-  //   const trunc = 0.6
+   // get random array using Pareto distribution
+    const randomArray = unirand.pareto(1,3).distributionSync(512)
+    const trunc = 0.6
   
-  //  // model authentication
-  //   const model = new HostedModel({
-  //     url: rurl,
-  //     token: rtoken}) // DANGER !! - Needs to be encripted
+   // model authentication
+    const model = new HostedModel({
+      url: rurl,
+      token: rtoken}) // DANGER !! - Needs to be encripted
 
-  //   // create input object for model
-  //   const inputs = {
-  //     "z": randomArray, 
-  //     "truncation": trunc}
+    // create input object for model
+    const inputs = {
+      "z": randomArray, 
+      "truncation": trunc}
     
-  //   // run model with above data
-  //   model.query(inputs)     
-  // .then((newLandscape)=> {
-  //   console.log('model ran')
-  //   // store new document in the database with image property landscape file
-  //   Landscape.create({ isUsed: false, image: newLandscape.image })
-  // })
-  // .catch(error => {
-  //   next(error)
-  // })
+    // run model with above data
+    model.query(inputs)     
+  .then((newLandscape)=> {
+    console.log('model ran')
+    // store new document in the database with image property landscape file
+    Landscape.create({ isUsed: false, image: newLandscape.image })
+  })
+  .catch(error => {
+    next(error)
+  })
   
-  // // fetch oldet document from the db collection that is not already used and update it to isUsed: true
-  // Landscape.findOneAndUpdate({ isUsed: false }, { isUsed: true}, { sort: { 'createdAt' : 1 } })
-  // .then((displayedLandscape) => {
-  //   // render view with the fetched landscape from db
-  //   res.render('landscape', { displayedLandscape })
-  // })
-  // .catch(error => {
-  //   next(error)
-  // })
+  // fetch oldest document from the db collection that is not already used and update it to isUsed: true
+  Landscape.findOneAndUpdate({ isUsed: false }, { isUsed: true}, { sort: { 'createdAt' : 1 } })
+  .then((displayedLandscape) => {
+    // render view with the fetched landscape from db
+    res.render('landscape', { displayedLandscape })
+  })
+  .catch(error => {
+    next(error)
+  })
 
 }, 1000) 
 });
